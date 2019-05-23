@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App2"
+             x:Class="App2.MainPage">
+
+    <Grid x:Name="Grille">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Mon petit morpion" 
+           x:Name="titre"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           Grid.Row="0"
+           Grid.Column="0" Grid.ColumnSpan="3"/>
+
+        <Slider x:Name="slider"
+                Maximum="100"
+                Grid.Row="1" 
+                Grid.Column="1" Grid.ColumnSpan="2"
+                ValueChanged="SliderEvent" />
+
+        <Label x:Name="Dificulte"
+           Text="Dificulté : 0" 
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           Grid.Row="1" 
+           Grid.Column="0"/>
+
+        <Label 
+           x:Name="lJoueur"
+           Text=". . . . ." 
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           Grid.Row="2" 
+          
+           Grid.Column="0" Grid.ColumnSpan="2"/>
+        
+
+        <Button  x:Name="B_Rejouer"
+           Text="Rejouer" 
+           HorizontalOptions="Fill"
+           VerticalOptions="Center"
+           Grid.Row="2" 
+           Grid.Column="2"/>
+
+        <Image Source="morpion2.png" 
+               Aspect="Fill"
+               Grid.Row="3" Grid.RowSpan="3"
+               Grid.Column="0" Grid.ColumnSpan="3"/>
+        <Entry 
+                Text="{Binding Compteur}"
+                 Grid.Row="6"
+                 Grid.Column="0" />
+        
+        <Button  x:Name="PageSuivante"
+           Text="Suivante" 
+           Clicked="PageSuivante_Clicked"
+           HorizontalOptions="Fill"
+           VerticalOptions="Center"
+           Grid.Row="6" 
+           Grid.Column="2"/>
+    </Grid>
+
+
+    
+</ContentPage>
